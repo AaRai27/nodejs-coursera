@@ -10,7 +10,11 @@ const app = express();
 app.use(bodyParser.json());
 
 const dishRouter = require('./routes/dishRouter');
-app.use('/dishes', dishRouter);
+const promoRouter = require('./routes/promoRouter');
+const leaderRouter = require('./routes/leaderRouter');
+app.use('/dishes', dishRouter); //akan menampilkan [ http://localhost:3000/dish ] atau  [ http://localhost:3000/dish/12 ] jika dengan ID
+app.use('/promotions', promoRouter); //akan menampilkan [ http://localhost:3000/promotions ] atau  [ http://localhost:3000/promotions/12 ] jika dengan ID
+app.use('/leaders', leaderRouter); //akan menampilkan [ http://localhost:3000/leaders ] atau  [ http://localhost:3000/leaders/12 ] jika dengan ID
 
 
 
